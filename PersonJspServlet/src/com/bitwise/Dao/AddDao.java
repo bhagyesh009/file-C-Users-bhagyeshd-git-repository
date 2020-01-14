@@ -16,6 +16,7 @@ public class AddDao {
 		
 		Connection con = JDBCConnection.jdbcConnection();
 		
+		System.out.println("Hi"+con.toString());
 		return false;
 	}
 	
