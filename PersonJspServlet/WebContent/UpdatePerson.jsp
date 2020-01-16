@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-			<form action="">
+			<form action="update">
 		
-	
+			
 	
 		
 		</form>

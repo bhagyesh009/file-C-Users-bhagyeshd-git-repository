@@ -7,6 +7,9 @@
 <title>Welcome</title>
 </head>
 <body>
+
+
+
 		<form name="Main Page" method="get" action="AddPerson.jsp">
 		<input type="submit" value="Add Person">
 		</form>
