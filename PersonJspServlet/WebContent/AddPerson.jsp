@@ -7,7 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-		
+		${namefeedback}
+		<br>
+		${mobnofeedback}
+		<br>
 		<form action="add">
 		
 	Name:	<input type="text" name ="name" placeholder="Enter Name"><br><br>

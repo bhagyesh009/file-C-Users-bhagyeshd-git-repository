@@ -16,14 +16,13 @@ public class AddDao {
 	public boolean addPerson(Person person) {
 		boolean addRecord=false;
 		Connection con = JDBCConnection.jdbcConnection();
-		
-		System.out.println("Hi"+con.toString());
-		
-		String insertQuery="insert into person(name,mobno) values(?,?)";
+				
+		String insertQuery="insert into person(name,mobno) values(?,?,?)";
 		try {
 			st = con.prepareStatement(insertQuery);
 			st.setString(1,person.getName());
 			st.setString(2,person.getMobno());
+			st.setBoolean(3,true);
 			int row=st.executeUpdate();
 			
 			
@@ -37,7 +36,6 @@ public class AddDao {
 			
 			e.printStackTrace();
 		}
-		System.out.println("personadded"+addRecord);
 		return addRecord;
 	}
 	

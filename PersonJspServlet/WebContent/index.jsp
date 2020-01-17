@@ -5,11 +5,14 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Welcome</title>
+
 </head>
 <body>
 
 
-
+		${feedback} 
+	
+		
 		<form name="Main Page" method="get" action="AddPerson.jsp">
 		<input type="submit" value="Add Person">
 		</form>

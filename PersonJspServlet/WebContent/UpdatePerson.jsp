@@ -8,7 +8,10 @@
 </head>
 <body>
 			<form action="update">
-		
+Enter Your	Name:  <input type="text" name ="name" placeholder="Enter Name"><br><br>
+Enter New Mobile No.<input type="text" name="mobno" placeholder="Enter Mobile NO."><br><br>
+	<input type="submit" value="UpdateUser">
+	
 			
 	
 		
