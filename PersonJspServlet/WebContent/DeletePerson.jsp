@@ -7,11 +7,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="delete">
-		
-	
-	
+
+
+${feedback}
+		<br>
+		<br>
+	<form action="delete">
+		Enter Your Id: <input type="text" name ="ID" placeholder="Enter ID"><br><br>
+		<input type="submit" value="DeleteUser">
 		
 		</form>
+
+
+		<br>
 </body>
 </html>

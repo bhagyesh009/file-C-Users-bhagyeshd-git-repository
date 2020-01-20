@@ -17,12 +17,12 @@ public class AddDao {
 		boolean addRecord=false;
 		Connection con = JDBCConnection.jdbcConnection();
 				
-		String insertQuery="insert into person(name,mobno) values(?,?,?)";
+		String insertQuery="insert into person(name,mobno,status) values(?,?,?)";
 		try {
 			st = con.prepareStatement(insertQuery);
 			st.setString(1,person.getName());
 			st.setString(2,person.getMobno());
-			st.setBoolean(3,true);
+			st.setInt(3, 1);
 			int row=st.executeUpdate();
 			
 			
