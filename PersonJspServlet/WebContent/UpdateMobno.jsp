@@ -8,12 +8,15 @@
 </head>
 <body>
 
+${feedback}<br>
+${mobnofeedback}
+		<br>
 	<form action="updateMobno">
 
-		
-		<br> Enter New Mobile No. <input type="text" name="mobno"
-			placeholder="Enter New Mobile NO."><br>
-		<br> <input type="submit" value="updateMobno">
+		Enter Your Id: <input type="text" name="ID" placeholder="Enter ID"><br>
+		<br> <br> Enter New Mobile No. <input type="text"
+			name="mobno" placeholder="Enter New Mobile NO."><br> <br>
+		<input type="submit" value="updateMobno">
 
 
 	</form>

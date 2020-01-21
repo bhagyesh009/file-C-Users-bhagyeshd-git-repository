@@ -7,9 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="updateName">
+${namefeedback}
+		
+		<br>
+${feedback}
 
-	Enter New Name: <input type="text" name="name" placeholder="Enter New Name"><br>
+<br>
+	<form action="updateName">
+			Enter Your Id: <input type="text" name ="ID" placeholder="Enter ID"><br><br>
+			Enter New Name: <input type="text" name="name" placeholder="Enter New Name"><br>
 				<br> <input type="submit" value="updateName">
 
 

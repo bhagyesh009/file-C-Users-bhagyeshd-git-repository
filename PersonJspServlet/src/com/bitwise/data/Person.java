@@ -3,7 +3,7 @@ package com.bitwise.data;
 public class Person {
 	private String name="";
 	private String mobno="";
-	int id=(Integer) null;
+	int id=0;
 	
 	
 

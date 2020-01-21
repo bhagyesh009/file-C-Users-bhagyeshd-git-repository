@@ -7,13 +7,24 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-
-		<form action="UpdateService.jsp">
-		Enter Your Id: <input type="text" name ="ID" placeholder="Enter ID"><br><br>
-		<input type="submit" value="UpdateUser">
-		
+		${feedback}
+		<form name="updateName" method="get" action="UpdateName.jsp">
+		<input type="submit" value="Update Name">
 		</form>
+
+			<br>
+			<br>
+		<form name="updateMobno" method="get" action="UpdateMobno.jsp">
+		<input type="submit" value="Update Mobile No.">
+		</form>
+		<br>
+		<br>
+		
+		
+		<form name="updateRecord" method="get" action="UpdateRecord.jsp">
+		<input type="submit" value="Update Record">
+		</form>
+		
 
 
 		

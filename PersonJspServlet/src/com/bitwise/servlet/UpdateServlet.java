@@ -32,11 +32,11 @@ public class UpdateServlet extends HttpServlet {
 		switch (action) {
 
 		case "/updateName":
-
+			updateName(request, response);
 			break;
 
 		case "/updateMobno":
-
+			updateMobno(request, response);
 			break;
 
 		case "/updateRecord":
@@ -75,7 +75,7 @@ public class UpdateServlet extends HttpServlet {
 
 				if (nameValidation == true && mobnoValidation == true) {
 					Person person = new Person(name, mobno);
-					boolean updateRecord = updatePerson.updateRecord(person);
+					boolean updateRecord = updatePerson.updateRecord(person, ID_String);
 					if (updateRecord) {
 						request.setAttribute("feedback", "Person Updated SucessFully..!");
 					} else {
@@ -85,10 +85,10 @@ public class UpdateServlet extends HttpServlet {
 					RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 					rd.forward(request, response);
 
-				}else {
+				} else {
 					if (nameValidation == false) {
 						request.setAttribute("namefeedback", "Please Enter Valid Name");
-									} 
+					}
 					if (mobnoValidation == false) {
 
 						request.setAttribute("mobnofeedback", "Please Enter Valid Mobile Number");
@@ -112,4 +112,115 @@ public class UpdateServlet extends HttpServlet {
 
 	}
 
+	public void updateName(ServletRequest request, ServletResponse response) throws ServletException, IOException {
+
+		String name = request.getParameter("name");
+
+		String ID_String = request.getParameter("ID");
+
+		System.out.println("ID: " + ID_String);
+		if (ID_String == "") {
+
+			request.setAttribute("feedback", "ID cannot be NULL");
+			String feedback = (String) request.getAttribute("feedback");
+			RequestDispatcher rd = request.getRequestDispatcher("UpdatePerson.jsp");
+			rd.forward(request, response);
+
+			System.out.println("ID: " + ID_String);
+		} else {
+
+			boolean checkID = updatePerson.checkID(ID_String);
+			if (checkID) {
+				nameValidation = valid.nameValidation(name);
+
+				if (nameValidation == true) {
+					boolean updateName = updatePerson.updateName(name, ID_String);
+					if (updateName) {
+						request.setAttribute("feedback", "Person Updated SucessFully..!");
+					} else {
+						request.setAttribute("feedback", "Person is Not Updated");
+					}
+					String feedback = (String) request.getAttribute("feedback");
+					RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+					rd.forward(request, response);
+
+				} else {
+					if (nameValidation == false) {
+						request.setAttribute("namefeedback", "Please Enter Valid Name");
+					}
+					String namefeedback = (String) request.getAttribute("namefeedback");
+					RequestDispatcher rd = request.getRequestDispatcher("UpdateName.jsp");
+					rd.forward(request, response);
+				}
+
+			} else {
+				request.setAttribute("feedback", "Record is not present ");
+				String feedback = (String) request.getAttribute("feedback");
+				RequestDispatcher rd = request.getRequestDispatcher("UpdateName.jsp");
+				rd.forward(request, response);
+
+			}
+
+		}
+
+	}
+
+	public void updateMobno(ServletRequest request, ServletResponse response) throws ServletException, IOException {
+
+		String mobno = request.getParameter("mobno");
+		String ID_String = request.getParameter("ID");
+
+		System.out.println("ID: " + ID_String);
+		if (ID_String == "") {
+
+			request.setAttribute("feedback", "ID cannot be NULL");
+			String feedback = (String) request.getAttribute("feedback");
+			RequestDispatcher rd = request.getRequestDispatcher("UpdatePerson.jsp");
+			rd.forward(request, response);
+
+			System.out.println("ID: " + ID_String);
+		} else {
+
+			boolean checkID = updatePerson.checkID(ID_String);
+			if (checkID) {
+				
+				mobnoValidation = valid.mobnoValidation(mobno);
+
+				if (mobnoValidation == true) {
+					
+					boolean updateMobno = updatePerson.updateMobno(mobno, ID_String);
+					if (updateMobno) {
+						request.setAttribute("feedback", "Person Updated SucessFully..!");
+					} else {
+						request.setAttribute("feedback", "Person is Not Updated");
+					}
+					String feedback = (String) request.getAttribute("feedback");
+					RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+					rd.forward(request, response);
+
+				} else {
+					if (nameValidation == false) {
+						request.setAttribute("namefeedback", "Please Enter Valid Name");
+					}
+					
+					String mobnofeedback = (String) request.getAttribute("mobnofeedback");
+
+					RequestDispatcher rd = request.getRequestDispatcher("UpdateMobno.jsp");
+					rd.forward(request, response);
+				}
+
+			} else {
+				request.setAttribute("feedback", "Record is not present ");
+				String feedback = (String) request.getAttribute("feedback");
+				RequestDispatcher rd = request.getRequestDispatcher("UpdateMobno.jsp");
+				rd.forward(request, response);
+
+			}
+
+		}
+
+	}
+
+	
+	
 }
