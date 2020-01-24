@@ -2,14 +2,10 @@ package com.bitwise.data;
 
 public class Validation {
 
-	public boolean mobnoValidation(String mobno) {
-		if (mobno.length() == 10) {
+	public boolean mobnoValidation(long mobno) {
 
-			for (char ch : mobno.toCharArray()) {
-				if (Character.isLetter(ch)) {
-					return false;
-				}
-			}
+		if ((int) (Math.log10(mobno) + 1) == 10) {
+
 			return true;
 		} else
 			return false;

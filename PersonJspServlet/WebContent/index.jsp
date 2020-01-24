@@ -9,13 +9,12 @@
 </head>
 <body>
 
-
-		${feedback} 
-	
 		
 		<form name="Main Page" method="get" action="AddPerson.jsp">
 		<input type="submit" value="Add Person">
 		</form>
+		
+		
 		<br>
 		<form name="Main Page" method="get" action="UpdatePerson.jsp">
 		<input type="submit" value="Update Person">
