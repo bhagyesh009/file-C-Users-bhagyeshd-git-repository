@@ -11,7 +11,7 @@ public class Validation {
 			return false;
 	}
 
-	public boolean nameValidation(String name) {
+	public boolean isNameValid(String name) {
 		if (name != "" && !name.isEmpty()) {
 			for (char ch : name.toCharArray()) {
 				if (Character.isDigit(ch)) {

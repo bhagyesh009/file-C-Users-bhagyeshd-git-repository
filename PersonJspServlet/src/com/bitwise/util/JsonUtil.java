@@ -1,7 +1,6 @@
 package com.bitwise.util;
 
 import java.io.IOException;
-import java.util.List;
 
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.JsonParseException;
@@ -29,10 +28,10 @@ public class JsonUtil {
 		return null;
 	}
 
-	public static String convertJavaToJsonString(boolean data) {
+	public static String convertJavaToJsonString(User user) {
 
 		try {
-			return mapper.writeValueAsString(data);
+			return mapper.writeValueAsString(user);
 		} catch (JsonGenerationException e) {
 			e.printStackTrace();
 		} catch (JsonMappingException e) {

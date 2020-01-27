@@ -11,7 +11,6 @@ import java.util.Properties;
 public class JDBCConnection {
 
 	public static Connection jdbcConnection() {
-		Connection con = null;
 		Properties property = new Properties();
 		try {
 			FileInputStream file = new FileInputStream(
@@ -27,7 +26,7 @@ public class JDBCConnection {
 
 		try {
 			Class.forName(property.getProperty("driverName"));
-			con = DriverManager.getConnection(property.getProperty("URL"), property.getProperty("username"),
+			return  DriverManager.getConnection(property.getProperty("URL"), property.getProperty("username"),
 					property.getProperty("password"));
 		} catch (ClassNotFoundException e) {
 
@@ -36,7 +35,7 @@ public class JDBCConnection {
 
 			e.printStackTrace();
 		}
-		return con;
+		return null;
 	}
 
 }

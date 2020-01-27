@@ -3,10 +3,16 @@ package com.bitwise.data;
 public class Output {
 	
 	private int data;
-	@Override
-	public String toString() {
-		return "Ouput [data=" + data + ", errorCode=" + errorCode + ", errorMessage=" + errorMessage + "]";
+	private int errorCode;
+	private String errorMessage;
+	
+	public Output(int data, int errorCode, String errorMessage) {
+		super();
+		this.data = data;
+		this.errorCode = errorCode;
+		this.errorMessage = errorMessage;
 	}
+
 	public int getData() {
 		return data;
 	}
@@ -25,14 +31,10 @@ public class Output {
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
 	}
-	public Output(int data, int errorCode, String errorMessage) {
-		super();
-		this.data = data;
-		this.errorCode = errorCode;
-		this.errorMessage = errorMessage;
+
+	@Override
+	public String toString() {
+		return "Ouput [data=" + data + ", errorCode=" + errorCode + ", errorMessage=" + errorMessage + "]";
 	}
-	private int errorCode;
-	private String errorMessage;
-	
 	
 }
